@@ -1,0 +1,139 @@
+bg-color = #E6E6E6
+h2-color = #666666
+border-color = #EEEEEE
+octicon-color = #999999
+link-color = #45A6DB
+
+clearfix()
+  &:after
+    content ""
+    display block
+    clear both
+
+*
+  margin:  0
+  padding 0
+
+body 
+  font-family: Helvetica;
+  font-size: 16px;
+  margin: 30px;
+  
+  div#wrapper 
+    width 255px
+    background-color bg-color
+    padding 20px 40px 20px 20px
+    
+    div#avatar
+      padding-left 10px
+      
+      img
+        width 230px
+        border-radius 120px
+        
+    div.user-info
+      div#main-info
+        padding-left 10px
+        text-align: left
+        margin-top 5px
+        width 200px
+        margin-left 32px
+        h1
+          font-size 26px
+        
+        h2 
+          font-size 20px
+          color #666666
+          margin-left 30px
+          letter-spacing -0.04em
+          
+        div#label
+          display inline-block
+          margin-top 9px
+          margin-left 34px
+          font-size 12px
+          background-color #6CC644
+          color white
+          padding 1px 2px
+          letter-spacing -0.02rem
+          
+        a
+          font-size 12px
+          margin-left 0px
+          letter-spacing 0.02rem
+          text-decoration none
+          color #45A6DB
+          
+      div#details
+        padding-left 10px
+        border-top 2px solid #EEEEEE
+        margin-top 10px
+        padding-top 10px
+        clearfix()
+        
+        div#location
+          font-size 14px
+          
+          span.octicon
+            float left
+            margin-left 60px
+            margin-right 10px
+            color #999999
+            
+        div#mail
+          font-size 14px
+          margin-top 10px
+          
+          p
+            a
+              text-decoration none
+              color link-color
+          
+          span.octicon
+            float left
+            color octicon-color
+            margin-left 16px
+            margin-right: 10px
+            
+        div#joined
+          margin-top 10px
+          font-size 14px
+        
+          span.octicon
+            float left
+            color octicon-color
+            margin-left 25px
+            margin-right: 10px
+        
+      div#git-info
+        border-top 2px solid #EEEEEE
+        margin-top 10px
+        
+        div.followers, div.starred, div.following
+          display inline-block 
+          position relative
+          margin-top 38px
+          font-size 11px
+          margin-left 24px
+          color #A08F76
+          
+          span
+            position absolute
+            top -28px
+            left -11px
+            font-size 27px
+            font-weight bold
+            letter-spacing 0.02em
+            color #4078C0
+            
+        div.starred   
+          margin-left 40px
+          
+          > span
+            left 10px
+            
+        div.following   
+          margin-left 29px
+          
+          > span
+            left 14px

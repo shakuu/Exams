@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Helvetica;
+  font-size: 16px;
+  margin: 30px;
+}
+body div#wrapper {
+  width: 255px;
+  background-color: #e6e6e6;
+  padding: 20px 40px 20px 20px;
+}
+body div#wrapper div#avatar {
+  padding-left: 10px;
+}
+body div#wrapper div#avatar img {
+  width: 230px;
+  border-radius: 120px;
+}
+body div#wrapper div.user-info div#main-info {
+  padding-left: 10px;
+  text-align: left;
+  margin-top: 5px;
+  width: 200px;
+  margin-left: 32px;
+}
+body div#wrapper div.user-info div#main-info h1 {
+  font-size: 26px;
+}
+body div#wrapper div.user-info div#main-info h2 {
+  font-size: 20px;
+  color: #666;
+  margin-left: 30px;
+  letter-spacing: -0.04em;
+}
+body div#wrapper div.user-info div#main-info div#label {
+  display: inline-block;
+  margin-top: 9px;
+  margin-left: 34px;
+  font-size: 12px;
+  background-color: #6cc644;
+  color: #fff;
+  padding: 1px 2px;
+  letter-spacing: -0.02rem;
+}
+body div#wrapper div.user-info div#main-info a {
+  font-size: 12px;
+  margin-left: 0px;
+  letter-spacing: 0.02rem;
+  text-decoration: none;
+  color: #45a6db;
+}
+body div#wrapper div.user-info div#details {
+  padding-left: 10px;
+  border-top: 2px solid #eee;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+body div#wrapper div.user-info div#details:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body div#wrapper div.user-info div#details div#location {
+  font-size: 14px;
+}
+body div#wrapper div.user-info div#details div#location span.octicon {
+  float: left;
+  margin-left: 60px;
+  margin-right: 10px;
+  color: #999;
+}
+body div#wrapper div.user-info div#details div#mail {
+  font-size: 14px;
+  margin-top: 10px;
+}
+body div#wrapper div.user-info div#details div#mail p a {
+  text-decoration: none;
+  color: #45a6db;
+}
+body div#wrapper div.user-info div#details div#mail span.octicon {
+  float: left;
+  color: #999;
+  margin-left: 16px;
+  margin-right: 10px;
+}
+body div#wrapper div.user-info div#details div#joined {
+  margin-top: 10px;
+  font-size: 14px;
+}
+body div#wrapper div.user-info div#details div#joined span.octicon {
+  float: left;
+  color: #999;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+body div#wrapper div.user-info div#git-info {
+  border-top: 2px solid #eee;
+  margin-top: 10px;
+}
+body div#wrapper div.user-info div#git-info div.followers,
+body div#wrapper div.user-info div#git-info div.starred,
+body div#wrapper div.user-info div#git-info div.following {
+  display: inline-block;
+  position: relative;
+  margin-top: 38px;
+  font-size: 11px;
+  margin-left: 24px;
+  color: #a08f76;
+}
+body div#wrapper div.user-info div#git-info div.followers span,
+body div#wrapper div.user-info div#git-info div.starred span,
+body div#wrapper div.user-info div#git-info div.following span {
+  position: absolute;
+  top: -28px;
+  left: -11px;
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  color: #4078c0;
+}
+body div#wrapper div.user-info div#git-info div.starred {
+  margin-left: 40px;
+}
+body div#wrapper div.user-info div#git-info div.starred > span {
+  left: 10px;
+}
+body div#wrapper div.user-info div#git-info div.following {
+  margin-left: 29px;
+}
+body div#wrapper div.user-info div#git-info div.following > span {
+  left: 14px;
+}
