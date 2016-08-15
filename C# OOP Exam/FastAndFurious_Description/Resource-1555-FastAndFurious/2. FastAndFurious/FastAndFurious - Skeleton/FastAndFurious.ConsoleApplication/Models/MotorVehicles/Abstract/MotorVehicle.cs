@@ -47,7 +47,7 @@ namespace FastAndFurious.ConsoleApplication.Models.MotorVehicles.Abstract
         {
             get
             {
-                return this.weightInGrams;
+                return this.weightInGrams + this.TunningParts.Sum(x => x.Weight);
             }
 
             protected set
@@ -60,7 +60,8 @@ namespace FastAndFurious.ConsoleApplication.Models.MotorVehicles.Abstract
         {
             get
             {
-                return this.acceleration;
+                return this.acceleration + this.TunningParts.Sum(x => x.Acceleration);
+                //return this.acceleration;
             }
 
             protected set
@@ -73,7 +74,8 @@ namespace FastAndFurious.ConsoleApplication.Models.MotorVehicles.Abstract
         {
             get
             {
-                return this.topSpeed;
+                return this.topSpeed + this.TunningParts.Sum(x => x.TopSpeed);
+                //return this.topSpeed;
             }
 
             protected set
@@ -106,7 +108,7 @@ namespace FastAndFurious.ConsoleApplication.Models.MotorVehicles.Abstract
         public void AddTunning(ITunningPart part)
         {
             // TODO: NUll
-            if (this.tuningParts.Contains(part))
+            if (this.tuningParts.Any(existing => existing.GetType().BaseType == part.GetType().BaseType))
             {
                 // TODO : probly incorrect ( 1 part PER type ? )
                 throw new TunningDuplicationException("This part has already been installed");
@@ -116,37 +118,26 @@ namespace FastAndFurious.ConsoleApplication.Models.MotorVehicles.Abstract
         }
 
         /// <summary>
-        /// top speed ^2 / 2x Distance -> a
-        /// 
-        /// sqrt(2xDistance/ a)
-        /// http://physics.stackexchange.com/questions/79575/determing-time-to-complete-known-distance-with-constant-acceleration
+        ///
         /// </summary>
         /// <param name="trackLengthInMeters"></param>
         /// <returns></returns>
         public TimeSpan Race(int trackLengthInMeters)
         {
-            // Oohh boy, you shouldn't have missed the PHYSICS class in high school.
-            //var topSPeedInMS =
-            //    MetricUnitsConverter.GetMetersPerSecondFrom(this.TopSpeed);
+            var topSpeedInMetersSecDecimal = TypeCaster.IntToDecimal(MetricUnitsConverter.GetMetersPerSecondFrom(this.TopSpeed));
+            var accelerationDecimal = TypeCaster.IntToDecimal(this.Acceleration);
 
-            //var a = ((double)this.TopSpeed * (double)this.TopSpeed) / ((double)2 * ((double)trackLengthInMeters));
+            var timeToMaxSpeed = topSpeedInMetersSecDecimal / accelerationDecimal;
 
-            //var result = Math.Sqrt((2 * trackLengthInMeters) / a);
+            var distanceToMaxSpeed = (accelerationDecimal * (timeToMaxSpeed * timeToMaxSpeed)) / 2m;
 
-            var longResult = 0;
+            var remainingDistance = trackLengthInMeters - distanceToMaxSpeed;
 
-            // Get Distance to max speed
+            var timeForRemainingDistance = remainingDistance / topSpeedInMetersSecDecimal;
 
-            // Then get the rest 
-            var timeToMax =(double) MetricUnitsConverter.GetMetersPerSecondFrom(this.TopSpeed) / (double)this.Acceleration;
+            var totalTime = timeForRemainingDistance + timeToMaxSpeed;
 
-            var distanceTraveledTOMaxSpeed = 0.5 * this.acceleration * timeToMax * timeToMax;
-
-            var remainingDistance = trackLengthInMeters - distanceTraveledTOMaxSpeed;
-
-            var timeFOrTheRest = (double)remainingDistance / (double)MetricUnitsConverter.GetMetersPerSecondFrom(this.TopSpeed);
-
-            return new TimeSpan(Convert.ToInt64(timeFOrTheRest+timeToMax));
+            return new TimeSpan();
         }
 
         public bool RemoveTunning(ITunningPart part)
