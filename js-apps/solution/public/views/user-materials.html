@@ -1,0 +1,44 @@
+<!--{
+      "category": "watching",
+      "title": "jQuery Fundamentals",
+      "description": "jQuery Fundamentals",
+      "createdOn": "2016-09-28T12:50:13.612Z",
+      "commentsCount": 1,
+      "user": {
+        "id": "73a58989-5107-46e8-b781-4380f6c1c0b1",
+        "username": "johnnybravo"
+      },
+      "id": "dd707118-fbb0-45e7-b95f-c4ee9c90a6c9"
+    }-->
+<div class="well">
+    <a href="#/user-materials/watched" class="btn btn-default">Category Watched</a>
+    <a href="#/user-materials/watching" class="btn btn-default">Category Watching</a>
+    <a href="#/user-materials/want-to-watch" class="btn btn-default">Category Want-To-Watch</a>
+</div>
+{{#each this}}
+<div class="panel panel-default material text-center" data-id="{{this.id}}">
+    <div class="panel-heading">
+        <h1>{{this.title}}</h1>
+        <h2>{{this.description}}</h2>
+        <a href="#/materials/{{this.id}}" class="btn btn-success" role="button">Click to expand material info</a>
+        <div class="row">
+            <a href="#/user-materials/watched/{{this.id}}" class="btn btn-default">Add to Watched</a>
+            <a href="#/user-materials/watching/{{this.id}}" class="btn btn-default">Add to Watching</a>
+            <a href="#/user-materials/want-to-watch/{{this.id}}" class="btn btn-default">Add to Want-To-Watch</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <p>
+            {{this.description}}
+        </p>
+        <img src="{{this.img}}" alt="" height="250px">
+    </div>
+    <div class="panel-footer">
+        <p>Create on: {{this.createdOn}}</p>
+        <p data-user-id="{{this.uers.id}}">
+            Username: <a id="username" href="#/profiles/{{this.user.username}}">{{this.user.username}}</a>
+        </p>
+        <p>Comments Count: {{this.commentsCount}}</p>
+    </div>
+</div>
+{{/each}}

@@ -1,0 +1,4 @@
+
+$(() => {
+    appRouter.start('#content');
+});

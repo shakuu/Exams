@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Tests</title>
+
+    <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+</head>
+
+<body>
+    <div id="mocha"></div>
+
+    <script src="public/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="public/bower_components/handlebars/handlebars.min.js"></script>
+    <script src="public/bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="public/bower_components/navigo/lib/navigo.min.js"></script>
+    <script src="public/bower_components/crypto-js/crypto-js.js"></script>
+    <script src="public/bower_components/toastr/toastr.min.js"></script>
+
+    <script src="public/bower_components/crypto-js/enc-base64.js"></script>
+    <script src="public/bower_components/crypto-js/enc-utf16.js"></script>
+
+    <!-- My Scripts -->
+    <script src="public/controllers/home-controller.js"></script>
+    <script src="public/controllers/login-controller.js"></script>
+    <script src="public/controllers/navbar-controller.js"></script>
+    <script src="public/controllers/materials-controller.js"></script>
+    <script src="public/controllers/profile-controller.js"></script>
+    <script src="public/controllers/user-controller.js"></script>
+
+    <script src="public/requester/jquery-ajax-requester.js"></script>
+
+    <script src="public/router/navigo-router.js"></script>
+
+    <script src="public/services/handlebars-view-loader.js"></script>
+    <script src="public/services/login-service.js"></script>
+    <script src="public/services/materials-service.js"></script>
+    <script src="public/services/profile-service.js"></script>
+    <script src="public/services/user-service.js"></script>
+
+    <script src="public/utils/credential-manager.js"></script>
+    <script src="public/utils/crypto-tools.js"></script>
+    <script src="public/utils/dom-tree-helpers.js"></script>
+    <script src="public/utils/headers-helper.js"></script>
+    <script src="public/utils/pagination-addon.js"></script>
+    <script src="public/utils/query-params-helper.js"></script>
+    <script src="public/utils/search-addon.js"></script>
+    <script src="public/utils/validator.js"></script>
+    <!--<script src="./public/scripts/index.js"></script>-->
+
+    <!-- Testing libs -->
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script src="node_modules/sinon/pkg/sinon-1.17.6.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <!-- Tests  -->
+    <script src="unit-tests/services/login-service-tests.js"></script>
+    <script src="unit-tests/services/handlebars-view-loader-tests.js"></script>
+    <script src="unit-tests/services/profile-service-tests.js"></script>
+    <script src="unit-tests/services/materials-service-tests.js"></script>
+    <script src="unit-tests/services/user-service-tests.js"></script>
+    
+    <script>
+      mocha.run();
+    </script>
+</body>
+
+</html>

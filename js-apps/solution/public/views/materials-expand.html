@@ -1,0 +1,69 @@
+<!--{
+  "result": {
+    "id": "2feae65a-7200-4223-90cd-dc246fe026a0",
+    "title": "jQuery Fundamentals",
+    "description": "Learn how to create magic-like stuff with jQuery",
+    "createdOn": "2016-10-03T09:04:13.972Z",
+    "img": "https://bitstorm.org/edwin/jquery-presentatie/pix/jquery_logo_color_onwhite.png",          
+    "commentsCount": 0,
+    "user": {
+      "id": "27ee8e68-02e7-4228-b1d5-f7f20578e54f",
+      "username": "johnnybravo"
+    },
+    "comments": []
+  }
+}-->
+
+<!--text
+:
+"new commmnet"
+user
+:
+Object
+id
+:
+"039d910a-b114-40fe-bc19-2afe1a402645"
+username
+:
+"123123"-->
+
+<div class="panel panel-default material text-center" data-id="{{this.id}}">
+    <div class="panel-heading">
+        <h1>{{this.title}}</h1>
+        <a href="#/materials/{{this.id}}" class="btn btn-success" role="button">Click to expand material info</a>
+    </div>
+    <div class="panel-body">
+        <p>
+            {{this.description}}
+        </p>
+        <img src="{{this.img}}" alt="" height="250px">
+        <ul id="comments" class="list-group text-left">
+            {{#each this.comments}}
+            <li class="list-group-item">
+                <div class="panel panel-success">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <p>{{this.text}}</p>
+                    </div>
+                    <div class="panel-footer">
+                        <p data-user-id="{{this.user.ud}}">By: {{this.user.username}}</p>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+            <li class="list-group-item">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button id="btn-comment-add" class="btn btn-success" type="button">Add Comment</button>
+                    </span>
+                    <input id="tb-comment-text" type="text" class="form-control" placeholder="Comment...">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="panel-footer">
+        <p>Create on: {{this.createdOn}}</p>
+        <p data-user-id="{{this.uers.id}}">Author: <a href="#/profiles/{{this.user.username}}">{{this.user.username}}</a> </p>
+        <!--<p>Comments Count: {{this.commentsCount}}</p>-->
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<ul class="list-group">
+    {{#each this}}
+    <li class="list-group-item user" data-id="{{this.id}}">
+        Username: <a id="username" href="#/profiles/{{this.username}}">{{this.username}}</a>
+    </li>
+    {{/each}}
+</ul>
