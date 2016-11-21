@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<superheroes>
+  <superhero id="2">
+    <name>Nightwing</name>
+    <secretIdentity>Dick Grayson</secretIdentity>
+    <alignment>Good</alignment>
+    <powers>
+      <power>Martial arts</power>
+      <power>Acrobatics</power>
+    </powers>
+    <city>Gotham, USA, Earth</city>
+  </superhero>
+</superheroes>
